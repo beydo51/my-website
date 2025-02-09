@@ -1,0 +1,530 @@
+html, body {
+    height: auto;
+    margin: 0;
+    padding: 0;
+    background-color: #0e0e0e;
+    color: #fefefe;
+    overflow-x: hidden;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    min-height: 100vh;
+    padding-top: 150px;
+    overflow-y: auto;
+    justify-content: flex-start;  /* Sayfa öğelerinin üst kısımda yer almasını sağladık */
+}
+
+header {
+    background-color: #c75610;
+    color: black;
+    padding: 20px 20px;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1001;
+    text-align: center;
+    margin: 0;
+}
+
+header h1 {
+    font-size: 4.5em;
+    margin: 0;
+}
+
+header p {
+    margin: -10px;
+    line-height: 1.5;
+    color: white;
+}
+
+/* Telefon numaraları bağlantısı için stil */
+.contact-info {
+    margin-top: 55px; /* Header'dan biraz aşağıya kaydır */
+    display: flex; /* Flexbox düzeni */
+    width: 100%; /* Tam genişlik */
+}
+
+.contact-link1 {
+    color: red; /* Başlangıçta kırmızı renk */
+    text-decoration: none; /* Alt çizgiyi kaldır */
+    font-size: 1.5em; /* Yazı boyutunu biraz büyüt */
+    margin-left: 2em; /* Sol tarafa yapıştır */
+}
+
+.contact-link2 {
+    color: red; /* Başlangıçta kırmızı renk */
+    text-decoration: none; /* Alt çizgiyi kaldır */
+    font-size: 1.5em; /* Yazı boyutunu biraz büyüt */
+    margin-left:17em; /* Sağ tarafa yapıştır */
+}
+
+.contact-link1:hover,
+.contact-link2:hover {
+    color: aqua; /* Mouse ile üzerine gelince renk değişir */
+    cursor: pointer; /* Tıklanabilir olduğunda imleç değişir */
+}
+
+
+
+
+
+
+
+
+nav {
+position: fixed;
+    top: 120px; /* Adjusted to stick directly under the header */
+    left: 0;
+    width: 100%;
+    background-color: #ffffff;
+    z-index: 1003;
+    text-align: center;
+    border: 5px solid gray;
+    margin: 0; /* Ensure no margin is there */
+    padding: 0; /* Ensure no padding is there */
+}
+
+nav ul {
+ list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+
+nav ul li {
+    margin: 0 20px;
+}
+
+nav ul li a {
+     text-decoration: none;
+    color: #000000;
+    font-size: 1.5em;
+    padding: 10px 20px;
+    display: inline-block;
+    transition: background-color 0.3s ease;
+}
+
+.navbar {
+    display: flex; /* Yatay sıralama */
+    justify-content: center; /* Ortala */
+    list-style: none; /* Noktaları kaldır */
+    padding: 0;
+    margin: 0;
+    width: 100%; /* Sayfa genişliği kadar */
+    max-width: 100vw; /* Sayfa genişliğini aşmaması için */
+    background-color: #333; /* Arka plan rengi */
+    box-sizing: border-box; /* Çerçeve ve padding'in genişlik hesaplamalarına dahil edilmesi için */
+    z-index: 1005;
+}
+
+.navbar li {
+    margin: 0 15px; /* Her link arasında boşluk */
+}
+
+.navbar a {
+    color: #fff; /* Yazı rengi */
+    font-size: 1.2rem; /* Yazı boyutu */
+    text-decoration: none; /* Alt çizgi kaldırıldı */
+    padding: 10px 15px; /* İç boşluk */
+    display: inline-block; /* Düzgün hizalama için */
+}
+
+.navbar a:hover::after {
+    width: 100%; /* Alt çizgi linkin genişliği kadar olur */
+}
+
+.navbar a:hover {
+    color: #f39c12; /* Hover durumunda yazı rengini sarıya çevir */
+}
+
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 10px;
+    width: 100%;
+    flex: 1;
+    height: auto;
+    padding-right: 60px;
+}
+
+.container img {
+    position: absolute; /* Sabit konumlandırma */
+    left: 60rem; /* Sağda hizalama */
+    top: 55%; /* Yükseklik olarak ortalama */
+    transform: translateY(-50%); /* Yatayda ortalama */
+    height: 50%; /* Yüksekliğini büyütüyoruz, alt kısmı görünmesini sağlamak için */
+    z-index: 999; /* Header'ın üzerinde olacak şekilde */
+}
+
+.container img:nth-child(2) {
+    position: absolute;
+    left: -6rem; /* Sağ kenara yapıştır */
+    top: 65%; /* Yükseklik olarak ortala */
+    transform: translateY(-50%); /* Yatayda ortala */
+    height: 50%; /* Yüksekliğini ayarla */
+    z-index: 1000; /* Diğer içeriklerin üstünde olması için */
+}
+
+/* Slider Container */
+.slider {
+    position: relative;
+    width: 65%;
+    max-width: 900px;
+    margin: 20px auto;
+    overflow: hidden;
+    background-color: #222;
+    height: 500px;
+    border: 5px solid #c75610;
+    border-radius: 50px;
+    margin-bottom: 100px;  /* Slider altına boşluk ekledik */
+    margin-top: 10px;
+}
+
+.slider-images {
+    display: flex;
+    transition: transform 0.5s ease;
+    width: 1000%; /* Üç resim olduğu için 300% genişlik */
+}
+
+.slider-images img {
+    width:65%; /* Her resim, slider alanının 1/3'ünü kaplayacak şekilde ayarlandı */
+    height:500px;  
+    object-fit: fill;
+}
+
+.slider-buttons {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    transform: translateY(-50%);
+    z-index: 1000; /* Butonların üstte olmasını sağladık */
+}
+
+.slider-button {
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 2em;
+    z-index: 1000;
+}
+
+.slider-button:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Active slide indicators (dots) */
+.slider-dots {
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    bottom: 45px; /* Noktaları slider'ın altına yerleştiriyoruz */
+    width: 100%;
+    z-index: 100; /* Noktaların üstte kalmasını sağlıyoruz */
+}
+
+.slider-dot {
+    height: 15px;
+    width: 15px;
+    margin: 0 5px;
+    border-radius: 50%;
+    background-color: #bbb;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.slider-dot.active {
+    background-color: #c75610;
+    transform: scale(1.5);
+}
+
+/* Phone Call Button */
+.phone-button {
+    position: absolute;
+    top: 23%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #0e0e0e;
+    color: white;
+    border: none;
+    padding: 5px 30px; /* İç boşluğu genişlettik */
+    font-size: 2.5em; /* Yazı boyutunu küçülttük */
+    border-radius: 10px;
+    cursor: pointer;
+    z-index: 1;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    border: 2px solid #c75610;
+    display: flex;
+    justify-content: center;
+    align-items: center; /* Yazıyı tam ortalamak için flex ayarları */
+}
+
+.phone-button:hover {
+    background-color: red;
+    color: white;
+}
+
+
+
+
+
+.cls-container {
+    display: flex;
+    justify-content: center; /* Sayfada ortalar */
+    align-items: center; /* Dikeyde ortalar */
+    position: relative;
+    width: 200%; /* Genişlik ayarı */
+    max-width: 1200px; /* Maksimum genişlik */
+    height: 190vh; /* Yükseklik ayarı */
+    margin: 0 auto;
+    overflow: hidden; /* Taşmayı engeller */
+    right: 250px;
+}
+
+.cls {
+    width: 100%; /* Resmi kutuya tam sığdır */
+    max-width: 100%; /* Resmin genişliği kutuya sığacak şekilde */
+    height: auto; /* Orantılı boyutlandırma */
+    display: block;
+}
+
+.cls-text {
+    position: absolute;
+    top: -200px;
+    left: 0;
+    right: 0;
+    bottom: -170px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #fff;
+    background-color: rgba(0, 0, 0, 0.6); /* Metin arka planı */
+    font-size: 1.5em;  /* Yazı boyutu */
+    padding: 10px; /* Yazıya boşluk ekler */
+    box-sizing: border-box;
+    word-wrap: break-word; /* Kelimeler kutuya sığması için bölünsün */
+    white-space: normal; /* Yazının kutuya sığmasını sağlar */
+    overflow: hidden; /* Taşma engellenir, scroll bar yok */
+    line-height: 1.5; /* Satır yüksekliği */
+    font-family: Rockwell;/*Papyrus Algerian Copperplate Rockwell*/
+}
+
+/* Başlık etiketlerine margin ekleyin */
+h2, h3, h4, h5, h6 {
+    margin-top: 20px;  /* Başlıklar arasındaki üst boşluk */
+    margin-bottom: 20px;  /* Başlıklar arasındaki alt boşluk */
+    line-height: 1.4;  /* Başlıklar arasındaki satır yüksekliği */
+    color: red;
+}
+
+.contact-info {
+    line-height: 2; /* Satır yüksekliğini artırarak boşluk bırak */
+}
+
+header {
+    margin: 0 auto; /* Ortala */
+    padding: 17px 0; /* Dikeyde daha az boşluk */
+    text-align: center; /* İçeriği ortala */
+}
+
+footer {
+    background-color: #a34706;
+    color: #fefefe;
+    text-align: center;
+    width: 100%;
+    margin-top: 20px;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    padding: 5px 0;
+    z-index: 1000; /* Üstte kalmasını sağladık */
+}
+
+footer p {
+    margin: 0;
+    font-size: 1.2em;
+}
+
+
+/* Mobile-responsive media queries */
+/* Mobil cihazlar için daha esnek tasarım */
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 1.8em; /* Küçük ekranlarda başlık boyutunu küçült */
+    }
+
+    /* Header ve navbar içeriği için düzenleme */
+    header {
+        padding: 8px 0; /* Dikeyde daha küçük padding */
+    }
+    header p{
+        padding: 5px;
+        font-size: 10px;
+    }
+
+    nav {
+
+        width: 100%;
+        padding: 0; /* Daha fazla esneklik sağlamak için padding */
+        top: 52px;
+    }
+
+    .navbar {
+        display: flex; /* Flexbox düzenini aktif et */
+        flex-direction: row; /* Yatay hizalama */
+        justify-content: center; /* Elemanları ortalayacak şekilde hizala */
+        padding: 0; /* Padding'i sıfırla */
+        margin: 0; /* Margin'i sıfırla */
+        background-color: #333;
+        flex-wrap: wrap; /* Ekran küçük olduğunda elemanlar sarmalanabilir */
+
+    }
+
+    .navbar li {
+        margin: 0 3px; /* Elemanlar arasındaki boşluğu daha da küçült */
+    }
+
+    .navbar a {
+        font-size: 10px; /* Yazı boyutunu küçük ekranlara uygun hale getirdik */
+        padding: 4px 8px; /* Linklere daha az iç boşluk ekleyelim */
+    }
+
+    footer {
+        width: 100%;
+        padding: -10px; /* Footer paddingini küçült */
+        font-size: 10px;
+    }
+
+    .phone-button {
+        font-size: 1em; /* Telefon butonunun yazı boyutunu küçült */
+        top: 20vh;
+    }
+
+    .contact-info {
+        display: flex; /* Flexbox düzeni */
+        flex-direction: row; /* Yatayda dizilmesini sağla */
+        justify-content: center; /* Ortalar */
+        align-items: center; /* Dikeyde ortalar */
+        margin-top: -8px; /* Üstten boşluk ekledik */
+        position: relative; /* Üstten kaymasını sağlamak için */
+        z-index: 9999999;
+    }
+
+    .contact-link1, .contact-link2 {
+        font-size: 9px; /* Yazı boyutunu küçült */
+        margin: 0 8px; /* Sağ ve sol arasında boşluk bırak */
+        color: red; /* Başlangıçta kırmızı renk */
+        text-decoration: none; /* Alt çizgiyi kaldır */
+    }
+
+    .contact-link1:hover,
+    .contact-link2:hover {
+        color: aqua; /* Hover'da renk değişir */
+        cursor: pointer; /* Tıklanabilir olduğunda imleç değişir */
+    }
+
+    .container {
+        width: 100%; /* Konteynerin genişliğini %100 yap */
+        padding: 8px;
+    }
+
+    .container img {
+        display: none;
+    }
+
+    /* Slider için uyarlama */
+    .slider {
+        width: 90%;
+        height: 250px; /* Slider yüksekliğini mobilde düşür */
+        top: -1em;
+    }
+
+    .slider-images img {
+        width: 100%; /* Her resim %100 genişlik alacak */
+        height: 250px; /* Yüksekliği uygun hale getir */
+    }
+
+    .slider-dots {
+        bottom: 1em; /* Dots konumunu slider'ın altına yakın yap */
+    }
+
+    .slider-dot.active {
+        width: 15px; /* Nokta boyutunu küçült */
+        height: 15px; 
+    }
+
+
+    .slider-buttons {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    transform: translateY(-50%);
+    z-index: 1000; /* Butonların üstte olmasını sağladık */
+}
+
+.slider-button {
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 1em;
+    z-index: 1000;
+}
+
+.slider-button:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+
+    .cls-container {
+        display: flex;
+        justify-content: center; /* İçeriği yatayda ortalar */
+        align-items: center; /* İçeriği dikeyde ortalar */
+        position: relative;
+        width: 80%; /* Genişlik %100 */
+        max-width: 100%; /* Maksimum genişlik sınırı */
+        height: 135em; /* Yükseklik daha da küçültüldü */
+        padding: 10px; /* İçeride biraz daha boşluk */
+        overflow: hidden; /* Taşmayı engeller */
+        margin: 0 auto; /* Container'ı yatayda ortalar */
+        top: -32em; /* Container'ı biraz yukarıya alır */
+        left: 2px;
+    }
+
+    .cls-text {
+        font-size: 0.8em; /* Yazı boyutunu daha da küçültüyoruz */
+        padding: 6px; /* Yazıya daha az boşluk ekliyoruz */
+        position: absolute;
+        top: 20%; /* Yazının konumunu biraz yukarıda başlatıyoruz */
+        left: 0; /* Yazıyı tam sol tarafa yaslıyoruz */
+        right: auto;
+        bottom: auto;
+        word-wrap: break-word; /* Kelimelerin satırlara kırılmasını sağlar */
+        overflow-wrap: break-word; /* Kelimelerin taşmasını engeller */
+        overflow: hidden; /* İçeriğin taşmasını engeller */
+        white-space: normal; /* Yazı kutuya sığacak şekilde kırılır */
+        max-width: 100%; /* Yazı alanı %100 genişlikte */
+        text-align: center; /* Yazıyı ortalar */
+    }
+
+    .cls {
+        width: 100%; /* Resim genişliği %100 */
+        height: auto; /* Resmin yüksekliği otomatik olacak şekilde ayarladık */
+    }
+}
