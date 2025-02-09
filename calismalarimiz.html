@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+
+
+    <!-- Meta Tags for SEO -->
+<meta name="description" content="Niğde'de sıhhi tesisat ve doğalgaz hizmetleri. Onur Mekanik, güvenilir sıhhi tesisat, kombi bakımı, kalorifer tesisatı ve doğalgaz bağlantı çözümleri sunar.">
+<meta name="keywords" content="Niğde sıhhi tesisat, doğalgaz tesisatı, kombi bakımı, kalorifer tesisatı, tesisat hizmetleri, tesisat ustası, Niğde tesisat, Onur Mekanik, su tesisatı, doğalgaz bağlantısı, tesisat sorunları çözümü, tesisat tamiri, Niğde doğalgaz, tesisat kurulumu">
+<meta name="author" content="Onur Mekanik">
+<meta name="robots" content="index, follow">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:title" content="Onur Mekanik - Niğde | Sıhhi Tesisat ve Doğalgaz Hizmetleri">
+<meta property="og:description" content="Niğde'de sıhhi tesisat ve doğalgaz hizmetlerinde profesyonel çözümler. Güvenilir hizmet ve uzman ekiple Onur Mekanik sizinle!">
+<meta property="og:type" content="website">
+<meta property="og:url" content="http://www.onurmekanik.com"> <!-- Sitenizin URL'sini yazın -->
+<meta property="og:image" content="http://www.onurmekanik.com/png/favicon-1.png"> <!-- Logo URL'sini yazın -->
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Onur Mekanik - Niğde | Sıhhi Tesisat ve Doğalgaz Hizmetleri</title>
+    <link rel="stylesheet" type="text/css" href="css/calismalarimiz.css">
+    <link rel="icon" href="png/favicon-1.png" type="image/png" sizes="64x64">
+
+
+   
+
+</head>
+<body>
+<header>
+    <h1 class="neon-glow">ONUR MEKANİK</h1>
+    <p>Niğde'de Güvenilir Tesisat Hizmetlerinin Doğru Adresi</p>
+</header>
+
+    <!-- Navbar -->
+ <nav>
+    <ul class="navbar">
+        <li><a href="index.html">Anasayfa</a></li>
+        <li><a href="calismalarimiz.html">Çalışmalarımız</a></li>
+        <li><a href="hakkimizda.html">Hakkımızda</a></li>
+        <li><a href="iletisim.html">İletişim</a></li>
+    </ul>
+</nav>
+
+    <!-- Bizi Ara Butonu -->
+    <a href="tel:+905435930141">
+        <button class="phone-button glow-on-hover">
+        <div class="neon-container"><span class="neon-text">Bizi Ara</span></div></button>
+    </a>
+
+  <div class="iletisim-container">
+    <p class="iletisim-text">
+        
+        <span class="neon"><strong>Talha Kılınçasan:</strong> 0(543) 593 01 41&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+        <span class="flux"><strong>Onur Akdağ:</strong> 0(533) 058 97 51</span>
+        
+        
+    </p>
+</div>
+    <!-- Wrench Resimleri (Değişmeden Kaldı) -->
+    <div class="container">
+        <img src="png/wrench-1.png" alt="Tesisat Hizmetleri Resmi" onclick="openModal(this)">
+        <img src="png/wrench-2.png" alt="Tesisat Hizmetleri Resmi 2" onclick="openModal(this)">
+    </div>
+
+    <!-- Resim Galerisi -->
+    <div class="gallery error">
+         
+        
+        <img src="jpg/resim1.jpg" alt="Resim 2" onclick="openModal(this)">
+        <img src="jpg/resim2.jpg" alt="Resim 3" onclick="openModal(this)">
+        <img src="jpg/resim3.jpg" alt="Resim 4" onclick="openModal(this)">
+        <img src="jpg/resim4.jpg" alt="Resim 5" onclick="openModal(this)">
+        <img src="jpg/resim5.jpg" alt="Resim 6" onclick="openModal(this)">
+        <img src="jpg/resim6.jpg" alt="Resim 7" onclick="openModal(this)">
+        <img src="jpg/resim7.jpg" alt="Resim 8" onclick="openModal(this)">
+        <img src="jpg/resim8.jpg" alt="Resim 8" onclick="openModal(this)">
+      
+
+        
+    </div>
+
+    <!-- Modal (Tam ekran resim görüntüleme) -->
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <button class="prev" onclick="changeImage(-1)">&#10094;</button>
+            <img id="modal-image" src="" alt="Tam ekran Resim">
+            <button class="next" onclick="changeImage(1)">&#10095;</button>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Onur Mekanik | Sıhhi Tesisat Merkez/Niğde</p>
+    </footer>
+
+    <script>
+        let currentIndex = 0;
+        const images = document.querySelectorAll('.gallery img');
+        const modal = document.getElementById('modal');
+        const modalImage = document.getElementById('modal-image');
+        
+        // Resme tıklandığında tam ekran açma
+        function openModal(image) {
+            modal.style.display = "flex";
+            modalImage.src = image.src;
+            currentIndex = Array.from(images).indexOf(image); // Tıklanan resmin index'ini al
+        }
+
+        // Modal'i kapatma
+        function closeModal() {
+            modal.style.display = "none";
+        }
+
+        // Resim değiştirme
+        function changeImage(direction) {
+            currentIndex += direction;
+            if (currentIndex < 0) currentIndex = images.length - 1; // Sonraki resme git
+            if (currentIndex >= images.length) currentIndex = 0; // İlk resme git
+            modalImage.src = images[currentIndex].src;
+        }
+
+        // Modal dışında tıklanarak kapama
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                closeModal();
+            }
+        }
+
+        // ESC tuşuna basıldığında modal'i kapatma
+        window.addEventListener('keydown', function(event) {
+            if (event.key === "Escape") {
+                closeModal();
+            }
+        });
+    </script>
+</body>
+</html>
