@@ -1,0 +1,597 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: #0e0e0e;
+    color: #fefefe;
+    overflow-x: hidden;
+    overflow: hidden;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    min-height: 100vh;
+    padding-top: 150px;
+    overflow-y: auto;
+    overflow: hidden;
+}
+
+
+header {
+    background-color: #c75610;
+    color: black;
+    padding: 20px 20px;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1001;
+    text-align: center;
+    margin: 0;
+}
+
+header h1 {
+    font-size: 4.5em;
+    margin: 0;
+}
+
+header p {
+    margin: -10px;
+    line-height: 1.5;
+    color: white;
+}
+nav {
+position: fixed;
+    top: 120px; /* Adjusted to stick directly under the header */
+    left: 0;
+    width: 100%;
+    background-color: #ffffff;
+    z-index: 1003;
+    text-align: center;
+    border: 5px solid gray;
+    margin: 0; /* Ensure no margin is there */
+    padding: 0; /* Ensure no padding is there */
+}
+
+nav ul {
+ list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+
+nav ul li {
+    margin: 0 20px;
+}
+
+nav ul li a {
+     text-decoration: none;
+    color: #000000;
+    font-size: 1.5em;
+    padding: 10px 20px;
+    display: inline-block;
+    transition: background-color 0.3s ease;
+}
+
+.navbar {
+    display: flex; /* Yatay sıralama */
+    justify-content: center; /* Ortala */
+    list-style: none; /* Noktaları kaldır */
+    padding: 0;
+    margin: 0;
+    width: 100%; /* Sayfa genişliği kadar */
+    max-width: 100vw; /* Sayfa genişliğini aşmaması için */
+    background-color: #333; /* Arka plan rengi */
+    box-sizing: border-box; /* Çerçeve ve padding'in genişlik hesaplamalarına dahil edilmesi için */
+    z-index: 1005;
+}
+
+.navbar li {
+    margin: 0 15px; /* Her link arasında boşluk */
+}
+
+.navbar a {
+    color: #fff; /* Yazı rengi */
+    font-size: 1.2rem; /* Yazı boyutu */
+    text-decoration: none; /* Alt çizgi kaldırıldı */
+    padding: 10px 15px; /* İç boşluk */
+    display: inline-block; /* Düzgün hizalama için */
+}
+
+.navbar a:hover::after {
+    width: 100%; /* Alt çizgi linkin genişliği kadar olur */
+}
+
+.navbar a:hover {
+    color: #f39c12; /* Hover durumunda yazı rengini sarıya çevir */
+}
+
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 10px;
+    width: 100%;
+    flex: 1;
+    height: auto;
+    padding-right: 60px;
+}
+
+section {
+    margin-bottom: 40px;
+}
+
+section h2 {
+    margin-bottom: 20px;
+    color: #f09544;
+    font-size: 2em;
+    text-align: center;
+    font-weight: bold;
+}
+
+section p {
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.8;
+    font-size: 1.1em;
+    text-align: justify;
+    color: #fefefe;
+}
+.telefon-numara {
+    text-decoration: none; /* Bağlantı altındaki çizgiyi kaldırır */
+    color: inherit; /* Yazının rengini miras alır */
+}
+.telefon-numara:hover {
+    color: #007bff; /* Renk değişimini istediğiniz şekilde yapabilirsiniz */
+}
+
+.container img {
+    position: absolute;
+    left: 60rem;
+    top: 55%;
+    transform: translateY(-50%);
+    height: 50%;
+    z-index: 999;
+}
+
+
+
+.container img:nth-child(2) {
+    position: absolute;
+    left: -6rem;
+    top: 65%;
+    transform: translateY(-50%);
+    height: 50%;
+    z-index: 1000;
+}
+
+.hakkimizda-img {
+    box-shadow: 0 0 20px rgba(199, 86, 16, 0.8), 0 0 30px rgba(199, 86, 16, 0.8), 0 0 40px rgba(199, 86, 16, 0.8);
+    border-radius: 10px;
+    width: 300px;
+    position: relative;
+    margin-top: 9em;
+}
+
+
+/* Bizi Ara Butonunun Tasarımı */
+.iletisim-container {
+    color: white; /* Beyaz metin rengi */
+    position: relative;
+    bottom: 5px;
+    width: 80%;
+    margin: 0 auto; /* Ortalayarak konumlandırma */
+    text-align: center;
+    margin-top: 4rem;
+}
+
+.iletisim-text {
+    font-size: 1.8em;
+    font-weight: bold;
+    line-height: 1.2;
+    margin-bottom: 15rem;
+    text-shadow: 0 0 5px rgba(255, 0, 0, 0.8), 0 0 10px rgba(255, 0, 0, 0.8), 0 0 15px rgba(255, 0, 0, 0.8), 0 0 20px rgba(255, 0, 0, 0.8);
+}
+
+
+/* Phone Call Button */
+.phone-button {
+    position: absolute;
+    top: 23%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #0e0e0e;
+    color: white;
+    border: none;
+    padding: 5px 30px; /* İç boşluğu genişlettik */
+    font-size: 2.5em; /* Yazı boyutunu küçülttük */
+    border-radius: 10px;
+    cursor: pointer;
+    z-index: 1;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    border: 2px solid #c75610;
+    display: flex;
+    justify-content: center;
+    align-items: center; /* Yazıyı tam ortalamak için flex ayarları */
+}
+
+.phone-button:hover {
+    background-color: red;
+    color: white;
+    box-shadow: 0 0 10px rgba(255, 0, 0, 0.8), 0 0 20px rgba(255, 0, 0, 0.8), 0 0 30px rgba(255, 0, 0, 0.8);
+}
+
+
+
+
+
+
+footer {
+    background-color: #a34706;
+    color: #fefefe;
+    text-align: center;
+    width: 100%;
+    margin-top: 20px;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    padding: 5px 0;
+    z-index: 1000;
+}
+
+footer p {
+    margin: 0;
+    font-size: 1.2em;
+}
+
+/* Genel Stil Ayarları */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+
+
+
+
+/* Mobil Uyumlu Stil */
+@media (max-width: 720px) {
+
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+    /* Header */
+   header h1 {
+        font-size: 64px; /* Başlık boyutunu büyüttük */
+        margin-right: 20px;
+    }
+
+    /* Header ve navbar içeriği için düzenleme */
+    header {
+        padding: 15px 0; /* Header paddingini arttırdık */
+        position: absolute;
+    }
+
+    header p {
+        padding: 8px;
+        font-size: 1em; /* Yazı boyutunu büyüttük */
+        margin-top: -15px;
+        margin-right: 10px;
+    }
+    /* Navigation */
+    nav {
+        width: 100%;
+        padding: 0;
+        top: 7em;
+        border: 1px solid #ccc;
+        position: absolute;
+    }
+
+    .navbar {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        padding: 0;
+        margin: 0;
+        background-color: #333;
+        flex-wrap: wrap;
+        height: auto;
+        border: 1px solid #ccc;
+        box-shadow: none;
+    }
+
+    .navbar li {
+        margin: 0 10px; /* Elemanlar arasındaki boşluğu büyüttük */
+        padding: 0;
+    }
+
+    .navbar a {
+        font-size: 25px; /* Yazı boyutunu büyüttük */
+        padding: 5px 8px; /* Daha geniş padding */
+        line-height: 1.2;
+        display: block;
+        text-decoration: none;
+        color: #fff;
+    }
+
+    /* Container */
+    
+    /* Phone Button */
+    .phone-button {
+        font-size: 2em;
+        padding: 10px 20px;
+        top: 30%; /* Yüksekliği ayarladık */
+    }
+
+    /* Footer */
+    footer p {
+        font-size: 1em;
+    }
+
+    /* Hakkımızda Resmi */
+    .container img {
+       display: none;
+    }
+
+   
+    /* İletişim metni */
+    .iletisim-text {
+        font-size: 1.5em;
+        margin-bottom: 10rem;
+    }
+
+
+.phone-button {
+    position: absolute;
+    top: 13%; /* Yukarı çıkarmak için top değerini düşürdük */
+    left: 50%;
+    transform: translate(-50%, -10%); /* Dikeyde biraz daha yukarı kaydırdık */
+    background-color: #0e0e0e;
+    color: white;
+    border: none;
+     padding: 5px 25px; /* Daha dar padding */
+    font-size: 2.3em; /* Yazı boyutunu küçülttük */
+    border-radius: 4px;
+    cursor: pointer;
+    z-index: 1;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    border: 1px solid #c75610;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 999999999;
+    white-space: nowrap; /* Yazının tek satırda görünmesini sağlar */
+}
+
+.phone-button:hover {
+    background-color: red;
+    color: white;
+}
+
+.hakkimizda-img {
+    box-shadow: 0 0 20px rgba(199, 86, 16, 0.8), 0 0 30px rgba(199, 86, 16, 0.8), 0 0 40px rgba(199, 86, 16, 0.8);
+    border-radius: 10px;
+    width: 300px;
+    position: absolute;
+    margin-top: -10em;
+    left: 13em;
+}
+
+.iletisim-container {
+    
+    color:white; /* Beyaz metin rengi */
+   position: relative;
+    bottom:5px;
+    width: 80%;
+    
+    text-align: center;
+    margin-top: 20em;
+    margin-left: 2em;
+
+}
+
+.iletisim-text {
+    font-size: 1.6em;
+    font-weight: bold;
+    line-height: 1.2;
+    text-shadow: 2px 2px 6px red;
+    margin-bottom: 25em;
+    
+}
+
+
+.telefon-numara {
+    text-decoration: none; /* Bağlantı altındaki çizgiyi kaldırır */
+    color: inherit; /* Yazının rengini miras alır */
+}
+.telefon-numara:hover {
+    color: #007bff; /* Renk değişimini istediğiniz şekilde yapabilirsiniz */
+}
+
+
+
+}
+
+
+
+
+/* Genel Stil Ayarları */
+@media (max-width: 480px) {
+   
+header{}
+    header h1 {
+        font-size: 2.5em;
+    }
+
+    header p {
+        font-size: 1.2em;
+    }
+
+    .navbar a {
+        font-size: 1rem;
+    }
+
+    .container img {
+        position: relative;
+        left: 0;
+        top: 0;
+        transform: translateY(0);
+        height: 35%;
+    }
+
+    .hakkimizda-img {
+        width: 250px;
+        margin-top: 5em;
+    }
+
+    .iletisim-text {
+        font-size: 1.5em;
+        margin-bottom: 10rem;
+    }
+
+    .phone-button {
+        top: 20%;
+        font-size: 2em;
+        padding: 5px 20px;
+    }
+}
+
+
+
+
+/* Genel Stil Ayarları */
+@media (max-width: 615px) {
+    header h1 {
+        font-size: 2.5em; /* Başlık boyutunu küçülttük */
+        margin-right: 10px;
+    }
+
+    header {
+        padding: 10px 0; /* Header paddingini azalttık */
+        position: absolute;
+        top: 0;
+    }
+
+    header p {
+        padding: 5px;
+        font-size: 12px; /* Yazı boyutunu küçülttük */
+        margin-top: -10px;
+        margin-right: 10px;
+    }
+    nav {
+        width: 100%;
+        padding: 0;
+        top: 4.5em;
+        border: 1px solid #ccc;
+        position: absolute;
+    }
+
+    .navbar {
+        display: flex;
+        flex-direction: row; /* Dikey düzen */
+        justify-content: center;
+        padding: 0;
+        margin: 0;
+        background-color: #333;
+        flex-wrap: wrap;
+        height: auto;
+        border: 1px solid #ccc;
+        box-shadow: none;
+    }
+
+    .navbar li {
+        margin: 5px 0; /* Elemanlar arasındaki boşluğu küçülttük */
+        padding: 0;
+    }
+
+    .navbar a {
+        font-size: 13px; /* Yazı boyutunu küçülttük */
+        padding: 1px 10px; /* Daha küçük padding */
+        line-height: 1;
+        display: block;
+        text-decoration: none;
+        color: #fff;
+    }
+
+.phone-button {
+    position: absolute;
+    top: 21%; /* Yukarı çıkarmak için top değerini düşürdük */
+    left: 50%;
+    transform: translate(-50%, -10%); /* Dikeyde biraz daha yukarı kaydırdık */
+    background-color: #0e0e0e;
+    color: white;
+    border: none;
+     padding: 5px 25px; /* Daha dar padding */
+    font-size: 2.3em; /* Yazı boyutunu küçülttük */
+    border-radius: 4px;
+    cursor: pointer;
+    z-index: 1;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    border: 1px solid #c75610;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 999999999;
+    white-space: nowrap; /* Yazının tek satırda görünmesini sağlar */
+}
+
+.phone-button:hover {
+    background-color: red;
+    color: white;
+}
+
+
+
+
+    .container img {
+       display: none;
+    }
+
+    .hakkimizda-img {
+        width: 230px;
+        margin-top: 3em;
+        left: 3.3em;
+    }
+
+.iletisim-container {
+    
+    color:white; /* Beyaz metin rengi */
+   position: relative;
+    bottom:5px;
+    width: 80%;
+    margin: 0 auto; /* Ortalayarak konumlandırma */
+    text-align: center;
+    margin-top: 20em;
+    margin-left: 2em;
+
+}
+
+.iletisim-text {
+    font-size: 12px;
+    font-weight: bold;
+    line-height: 1.2;
+    text-shadow: 2px 2px 6px red;
+    margin-bottom: 15rem;
+    
+}
+
+.telefon-numara {
+    text-decoration: none; /* Bağlantı altındaki çizgiyi kaldırır */
+    color: inherit; /* Yazının rengini miras alır */
+}
+.telefon-numara:hover {
+    color: #007bff; /* Renk değişimini istediğiniz şekilde yapabilirsiniz */
+}
+
+  
+}
